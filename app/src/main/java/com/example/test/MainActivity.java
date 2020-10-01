@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     String title[]={"City 1-City 2","City 1-City 2","City 1-City 2","City 1-City 2"};
     String subtitle[]={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
+    String subtitle2[]={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
     int images[]={R.drawable.bus1,R.drawable.bus2,R.drawable.bus3,R.drawable.bus4};
 
     @Override
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView=(ListView) findViewById(R.id.listView);
 
-        MyAdapter myAdapter=new MyAdapter(this,title,subtitle,images);
+        MyAdapter myAdapter=new MyAdapter(this,title,subtitle,subtitle2,images);
         listView.setAdapter(myAdapter);
     }
 
@@ -40,13 +41,15 @@ public class MainActivity extends AppCompatActivity {
         Context context;
         String title[];
         String subtitle[];
+        String subtitle2[];
         int img[];
 
-        public MyAdapter(Context c, String[] title, String[] subtitle, int[] img){
+        public MyAdapter(Context c, String[] title, String[] subtitle, String subtitle2[], int[] img){
             super(c, R.layout.row,R.id.textView1, title);
             this.context=c;
             this.title=title;
             this.subtitle=subtitle;
+            this.subtitle2=subtitle2;
             this.img=img;
         }
 
@@ -58,11 +61,13 @@ public class MainActivity extends AppCompatActivity {
             ImageView imageView=row.findViewById(R.id.image);
             TextView textView1 = row.findViewById(R.id.textView1);
             TextView textView2 = row.findViewById(R.id.textView2);
+            TextView textView3 = row.findViewById(R.id.textView3);
 
 
             imageView.setImageResource(images[position]);
             textView1.setText(title[position]);
             textView2.setText(subtitle[position]);
+            textView3.setText(subtitle2[position]);
 
             return row;
         }
