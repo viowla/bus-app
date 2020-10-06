@@ -18,10 +18,10 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
-    String title[]={"City 1-City 2","City 1-City 2","City 1-City 2","City 1-City 2"};
-    String subtitle[]={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
-    String subtitle2[]={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
-    int images[]={R.drawable.bus1,R.drawable.bus2,R.drawable.bus3,R.drawable.bus4};
+    String[] title ={"City 1-City 2","City 1-City 2","City 1-City 2","City 1-City 2"};
+    String[] subtitle ={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
+    String[] subtitle2 ={"XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX","XX.XX.XXXX XX:XX"};
+    int[] images ={R.drawable.bus1,R.drawable.bus2,R.drawable.bus3,R.drawable.bus4};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
