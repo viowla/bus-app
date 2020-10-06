@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        listView=(ListView) findViewById(R.id.listView);
+        listView= findViewById(R.id.listView);
 
         MyAdapter myAdapter=new MyAdapter(this,title,subtitle,subtitle2,images);
         listView.setAdapter(myAdapter);
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
-        String title[];
-        String subtitle[];
-        String subtitle2[];
-        int img[];
+        String[] title;
+        String[] subtitle;
+        String[] subtitle2;
+        int[] img;
 
-        public MyAdapter(Context c, String[] title, String[] subtitle, String subtitle2[], int[] img){
+        public MyAdapter(Context c, String[] title, String[] subtitle, String[] subtitle2, int[] img){
             super(c, R.layout.row,R.id.textView1, title);
             this.context=c;
             this.title=title;
@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater;
+            layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.row,parent,false);
             ImageView imageView=row.findViewById(R.id.image);
             TextView textView1 = row.findViewById(R.id.textView1);
