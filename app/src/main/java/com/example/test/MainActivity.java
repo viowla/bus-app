@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,6 +37,52 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter myAdapter=new MyAdapter(this,title,subtitle,subtitle2,images);
         listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(MainActivity.this.getApplicationContext(), SecondActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("images", images[0]);
+                    bundle.putString("title", title[0]);
+                    bundle.putString("subtitle", subtitle[0]);
+                    bundle.putString("subtitle2", subtitle2[0]);
+                    intent.putExtras(bundle);
+                    MainActivity.this.startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent = new Intent(MainActivity.this.getApplicationContext(), SecondActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("images", images[0]);
+                    bundle.putString("title", title[0]);
+                    bundle.putString("subtitle", subtitle[0]);
+                    bundle.putString("subtitle2", subtitle2[0]);
+                    intent.putExtras(bundle);
+                    MainActivity.this.startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent = new Intent(MainActivity.this.getApplicationContext(), SecondActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("images", images[0]);
+                    bundle.putString("title", title[0]);
+                    bundle.putString("subtitle", subtitle[0]);
+                    bundle.putString("subtitle2", subtitle2[0]);
+                    intent.putExtras(bundle);
+                    MainActivity.this.startActivity(intent);
+                }
+                if (position == 3) {
+                    Intent intent = new Intent(MainActivity.this.getApplicationContext(), SecondActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("images", images[0]);
+                    bundle.putString("title", title[0]);
+                    bundle.putString("subtitle", subtitle[0]);
+                    bundle.putString("subtitle2", subtitle2[0]);
+                    intent.putExtras(bundle);
+                    MainActivity.this.startActivity(intent);
+                }
+            }
+        });
     }
 
     class MyAdapter extends ArrayAdapter<String> {
