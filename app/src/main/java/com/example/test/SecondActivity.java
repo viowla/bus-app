@@ -41,6 +41,14 @@ public class SecondActivity extends AppCompatActivity {
 
         SecondActivity.MyAdapter myAdapter=new SecondActivity.MyAdapter(this,nameList,seatsNum,seatType);
         listView.setAdapter(myAdapter);
+        TextView type = findViewById(R.id.type);
+        type.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.show(getSupportFragmentManager(), "bottomSheet");
+            }
+        });
     }
 
     class MyAdapter extends ArrayAdapter<String> {
